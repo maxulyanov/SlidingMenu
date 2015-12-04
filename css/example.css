@@ -1,0 +1,126 @@
+/* GLOBAL EXAMPLE STYLE */
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@font-face {
+    font-family: 'trackregular';
+    src: url('../fonts/track-webfont.eot');
+    src: url('../fonts/track-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/track-webfont.woff2') format('woff2'),
+         url('../fonts/track-webfont.woff') format('woff'),
+         url('../fonts/track-webfont.ttf') format('truetype'),
+         url('../fonts/track-webfont.svg#trackregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  min-width: 720px;
+  font-family: 'trackregular', sans-serif;
+  font-size: 16px;
+  background: #E0EAEB;
+}
+.wrapper {
+  padding-bottom: 65px;
+}
+.logo {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #ED5153;
+  color: #FFF;
+  font-size: 26px;
+  text-decoration: none;
+}
+.logo:hover {
+  background: #C33E3F;
+}
+.content-title {
+  margin: 20px 0;
+  font-size: 26px;
+  text-align: center;
+}
+.content-title-level2 {
+  margin: 15px 0;
+  font-size: 18px;
+  text-align: center;
+}
+.content-title-inner {
+  padding: 15px 13px 13px 13px;
+  display: inline-block;
+  background: #6A8AA5;
+  color: #FFF;
+  border-radius: 5px;
+  line-height: 1em;
+}
+.content-title-inner:hover {
+  background: #41596D;
+}
+.not-required {
+  background: #2DA760;
+}
+.required {
+  background: #C33E3F;
+}
+.default {
+  padding: 5px;
+  border-radius: 3px;
+  background: #92ADC3;
+  color: #FFF;
+}
+.options-list {
+  width: 640px;
+  margin: 0 auto;
+}
+.options-list li {
+  font-family: 'Roboto', sans-serif;
+  margin: 15px 0;
+}
+.options-list .option {
+  font-size: 20px;
+  display: inline-block;
+  padding: 5px;
+  color: #FFF;
+  border-radius: 3px;
+}
+.options-list .desc {
+  display: inline;
+  font-size: 18px;
+}
+.options-list .mark {
+  padding: 5px;
+}
+.code {
+  width: 600px;
+  margin: 20px auto 40px;
+  padding: 20px;
+  background: #6A8AA5;
+  color: #FFF;
+  border-radius: 5px;
+}
+
+.from-github {
+  margin: 0 auto;
+  padding: 20px;
+  display: block;
+  width: 100%;
+  position: fixed;
+  bottom: -65px;
+  left: 0;
+  text-align: center;
+  background: #ED5153;
+  color: #FFF;
+  font-size: 16px;
+  text-decoration: none;
+  z-index: 10;
+}
+.from-github:hover {
+  background: #C33E3F;
+}
+.from-github .fa {
+  margin-right: 5px;
+  font-size: 1.5em;
+}

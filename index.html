@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/example.css">
+  <link rel="stylesheet" href="SlidingMenu.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="SlidingMenu.js"></script>
+  <script>
+    $(window).on('load', function() {
+
+      var $menu = $('.menu-example-id-1');
+      var $items = $menu.find('.menu-example__item');
+      new SlidingMenu({
+        'menu': $menu,
+        'items': $items
+      });
+
+      $menu = $('.menu-example-id-2');
+      $items = $menu.find('.menu-example__item');
+      new SlidingMenu({
+        'menu': $menu,
+        'items': $items,
+        'duration': 300,
+        'slidingClass': 'type-line'
+      });
+
+      $menu = $('.menu-example-id-3');
+      $items = $menu.find('.menu-example__item');
+      new SlidingMenu({
+        'menu': $menu,
+        'items': $items,
+        'slidingClass': 'type-color-green'
+      });
+
+      $menu = $('.menu-example-id-4');
+      $items = $menu.find('.menu-example__item');
+      new SlidingMenu({
+        'menu': $menu,
+        'items': $items,
+        'duration': 200,
+        'slidingClass': 'type-color-purple',
+        'direction': 'y'
+      },
+      {
+        'over': over,
+        'leave': leave
+      });
+
+      function over(current, data) {
+        $(data.options.items).removeClass('active');
+        $(current).addClass('active');
+      }
+
+      function leave(current, data) {
+        $(data.options.items).removeClass('active');
+        $(data.itemActive).addClass('active');
+      }
+
+      var $jsFromGithub = $('.js-form-github');
+      $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 200) {
+          $jsFromGithub.stop().animate({
+            'bottom': 0
+          }, 200);
+        } else {
+          $jsFromGithub.stop().animate({
+            'bottom': -65
+          }, 200);
+        }
+      });
+
+    });
+  </script>
+</head>
+<body>
+<div class="wrapper">
+  <a href="#" class="logo">SlidingMenu 1.0</a>
+  <h2 class="content-title"><span class="content-title-inner">Default sliding</span></h2>
+  <nav class="menu-example menu-example-id-1">
+    <ul>
+      <li>
+        <a href="#" class="menu-example__item active">Home</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item">Shop</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item">Tickets</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item">Gift Cards</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item">Contacts</a>
+      </li>
+    </ul>
+  </nav>
+
+  <h2 class="content-title"><span class="content-title-inner">Custom sliding</span></h2>
+  <nav class="menu-example menu-example-id-2">
+    <ul>
+      <li>
+        <a href="#" class="menu-example__item">Home</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item active">Shop</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item">Tickets</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item">Gift Cards</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item">Contacts</a>
+      </li>
+    </ul>
+  </nav>
+
+  <h2 class="content-title"><span class="content-title-inner">Not active item</span></h2>
+  <nav class="menu-example menu-example-id-3">
+    <ul>
+      <li>
+        <a href="#" class="menu-example__item">Home</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item">Shop</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item">Tickets</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item">Gift Cards</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item">Contacts</a>
+      </li>
+    </ul>
+  </nav>
+
+  <h2 class="content-title"><span class="content-title-inner">Vertical type</span></h2>
+  <nav class="menu-example menu-example-id-4">
+    <ul>
+      <li>
+        <a href="#" class="menu-example__item active"><i class="fa fa-2x fa-home"></i></a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item"><i class="fa fa-2x fa-shopping-bag"></i></a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item"><i class="fa fa-2x fa-plane"></i></a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item"><i class="fa fa-2x fa-gift"></i></a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item"><i class="fa fa-2x fa-phone-square"></i></a>
+      </li>
+    </ul>
+  </nav>
+
+  <h2 class="content-title"><span class="content-title-inner">Getting started</span></h2>
+  <ul class="options-list">
+    <li>
+      <div class="desc">1. Include jQuery</div>
+    </li>
+    <li>
+      <div class="desc">2. Include SlidingMenu files (js and css)</div>
+    </li>
+    <li>
+      <div class="desc">3. Create SlidingMenu with your options after window load</div>
+    </li>
+  </ul>
+
+<div class="code">
+<pre>
+$(function() {
+
+  var $menu = $('.menu-example-id-1');
+  var $items = $menu.find('.menu-example__item');
+  new SlidingMenu({
+    'menu': $menu,
+    'items': $items,
+  });
+
+});</pre>
+</div>
+
+  <h2 class="content-title"><span class="content-title-inner">Options</span></h2>
+  <h3 class="content-title-level2"><span class="content-title-inner ">Required</span></h3>
+  <ul class="options-list">
+    <li>
+      <div class="option mark required">menu</div>
+      <div class="desc">&mdash; Wrapper items menu (jQuery object)</div>
+    </li>
+    <li>
+      <div class="option mark required">items</div>
+      <div class="desc">&mdash; Items menu (jQuery object)</div>
+    </li>
+  </ul>
+  <h3 class="content-title-level2"><span class="content-title-inner">Not required</span></h3>
+  <ul class="options-list">
+    <li>
+      <div class="option mark not-required">itemActiveClass</div>
+      <div class="desc">&mdash; Active class current item menu (String). <span class="default">Default: 'active'</span>
+      </div>
+    </li>
+    <li>
+      <div class="option mark not-required">slidingClass</div>
+      <div class="desc">&mdash; Custom class sliding element (String). <span class="default">Default: ' '</span>
+      </div>
+    </li>
+    <li>
+      <div class="option mark not-required">direction</div>
+      <div class="desc">&mdash; Direction float sliding 'x' or 'y' (String). <span class="default">Default: 'x'</span>
+      </div>
+    </li>
+    <li>
+      <div class="option mark not-required">duration</div>
+      <div class="desc">&mdash; duration animation in mc (Number). <span class="default">Default: 400</span>
+      </div>
+    </li>
+  </ul>
+
+<div class="code">
+<pre>
+$(function() {
+
+  var $menu = $('.menu-example-id-1');
+  var $items = $menu.find('.menu-example__item');
+  new SlidingMenu({
+    'menu': $menu,
+    'items': $items,
+    'itemActiveClass': 'active-menu',
+    'slidingClass': 'type-color-purple',
+    'direction': 'y'
+    'duration': 200,
+  });
+
+});</pre>
+</div>
+
+  <h2 class="content-title"><span class="content-title-inner">Callbacks</span></h2>
+  <ul class="options-list">
+    <li>
+      <div class="option mark not-required">over</div>
+      <div class="desc">&mdash; Call function during hover menu items</div>
+    </li>
+    <li>
+      <div class="option mark not-required">leave</div>
+      <div class="desc">&mdash; Call function during leave from wrapper menu</div>
+    </li>
+  </ul>
+<div class="code">
+<pre>
+$(function() {
+
+  var $menu = $('.menu-example-id-1');
+  var $items = $menu.find('.menu-example__item');
+  new SlidingMenu({
+    'menu': $menu,
+    'items': $items,
+  },
+  {
+    'over': over,
+    'leave': leave
+  });
+
+  function over(current, data) {
+    console.log('hover menu items')
+  }
+
+  function leave(current, data) {
+    console.log('leave menu')
+  }
+
+});</pre>
+</div>
+
+  <a href="#" target="_blank" class="from-github js-form-github"><i class="fa fa-github"></i>Download from Github</a>
+</div>
+</body>
+</html>
