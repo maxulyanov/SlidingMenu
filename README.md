@@ -26,19 +26,20 @@ Magic sliding menu
 
 ##Options
 ###Required:
-<code>menu</code> — Wrapper items menu (jQuery object)
-<code>items</code> — Items menu (jQuery object)
+<code>menu</code> â€” Wrapper items menu (jQuery object)<br>
+<code>items</code> â€” Items menu (jQuery object)<br>
 ###Not required:
-<code>itemActiveClass</code> — Active class current item menu (String). Default: 'active'
-<code>slidingClass</code> — Custom class sliding element (String). Default: ' '
-<code>direction</code> — Direction float sliding 'x' or 'y' (String). Default: 'x'
-<code>duration</code> — duration animation in mc (Number). Default: 400
+<code>itemActiveClass</code> â€” Active class current item menu (String). Default: 'active'<br>
+<code>slidingClass</code> â€” Custom class sliding element (String). Default: ' '<br>
+<code>direction</code> â€” Direction float sliding 'x' or 'y' (String). Default: 'x'<br>
+<code>duration</code> â€” duration animation in mc (Number). Default: 400<br>
 
 ##Callbacks
-<code>over</code> — Call function during hover menu items
-<code>leave </code>— Call function during leave from wrapper menu
+<code>over</code> â€” Call function during hover menu items<br>
+<code>leave </code>â€” Call function during leave from wrapper menu
 
 ```html
+<script>
 $(window).on('load', function() {
 
   var $menu = $('.menu-example-id-1');
@@ -61,6 +62,7 @@ $(window).on('load', function() {
   }
 
 });
+</script>
 ```
 
 ##Browser Support
