@@ -24,17 +24,21 @@ Magic sliding menu
 </script>
 ```
 
-##Options
-###Required:
+## Options
+
+### Required:
+
 <code>menu</code> — Wrapper items menu (jQuery object)<br>
 <code>items</code> — Items menu (jQuery object)<br>
-###Not required:
+### Not required:
+
 <code>itemActiveClass</code> — Active class current item menu (String). Default: 'active'<br>
 <code>slidingClass</code> — Custom class sliding element (String). Default: ' '<br>
 <code>direction</code> — Direction float sliding 'x' or 'y' (String). Default: 'x'<br>
 <code>duration</code> — duration animation in mc (Number). Default: 400<br>
 
-##Callbacks
+## Callbacks
+
 <code>over</code> — Call function during hover menu items<br>
 <code>leave </code>— Call function during leave from wrapper menu
 
@@ -65,8 +69,10 @@ $(window).on('load', function() {
 </script>
 ```
 
-##Browser Support
+## Browser Support
+
 All modern browsers and IE9+
 
-##Example
+## Example
+
 See detail example - <a href="http://m-ulyanov.github.io/sliding-menu/ ">SlidingMenu</a>
